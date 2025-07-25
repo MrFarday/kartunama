@@ -96,7 +96,7 @@
         .floating-logo {
             height: 40px; /* ubah sesuai ukuran yang diinginkan */
             opacity: 0.8;
-}
+        }
 
 
         @keyframes float {
@@ -107,7 +107,7 @@
         .contact-section {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: -px;
         }
 
         .contact-item {
@@ -119,6 +119,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
+            margin-top: 8px;
         }
 
         .contact-item:hover {
@@ -150,7 +151,7 @@
         }
 
         .logo-image {
-            width: 105px;
+            width: 60px;
             height: auto;
             animation: logoGlow 2s ease-in-out infinite alternate;
             filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.4));
@@ -180,7 +181,7 @@
         }
 
         .logo-tagline {
-            font-size: 16px;
+            font-size: 11px;
             color: #e0e6ff;
             font-weight: 300;
             letter-spacing: 2px;
@@ -303,11 +304,9 @@
         }
 
         /* RESPONSIVE */
-        @media (max-width: 480px) {
+        @media (max-width: 320px) {
             .card-container {
-                width: 350px;
-                height: 220px;
-                max-width: 340px;    /* Batas maksimal lebar */
+             max-width: 300px;
             }
             
             .back-content {
@@ -315,7 +314,7 @@
             }
             
             .company-name {
-                font-size: 20px;
+                font-size: 14px;
             }
             
             .main-logo {
@@ -324,6 +323,7 @@
             
             .contact-item {
                 font-size: 10px;
+                gap: 4px;
             }
         }
     
