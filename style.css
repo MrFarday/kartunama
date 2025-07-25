@@ -1,0 +1,329 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 400px;
+            height: 240px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .business-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+
+        .card-container:hover .business-card {
+            transform: rotateY(0deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            backface-visibility: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* SISI DEPAN - IDENTITAS */
+        .card-back {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .back-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00f5ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(0,255,136,0.3);
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: #a0c4ff;
+            margin-top: 3px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .code-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px; /* sesuaikan tinggi area logo */
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-logo {
+            height: 40px; /* ubah sesuai ukuran yang diinginkan */
+            opacity: 0.8;
+}
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            color: #00ff88;
+        }
+
+        .contact-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+        }
+
+        /* SISI BELAKANG - LOGO */
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px, 0 ;
+        }
+
+        .front-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-image {
+            width: 105px;
+            height: auto;
+            animation: logoGlow 2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.4));
+            margin-bottom: 13px;
+        }
+
+        .main-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0px; /* atau 0 jika ingin nempel */
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes logoGlow {
+            from { 
+                text-shadow: 0 0 40px rgba(0,255,136,0.4);
+                transform: scale(1);
+            }
+            to { 
+                text-shadow: 0 0 60px rgba(0,255,136,0.8), 0 0 80px rgba(0,245,255,0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        .logo-tagline {
+            font-size: 16px;
+            color: #e0e6ff;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .specialties {
+            font-size: 12px;
+            color: #b8c6ff;
+            line-height: 1.6;
+        }
+
+        .specialty-item {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 3px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ELEMEN DEKORATIF */
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(0,255,136,0.2));
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .circle1 {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .circle2 {
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            left: -30px;
+            animation-delay: 2s;
+        }
+
+        .circle3 {
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            right: 20px;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        .tech-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px; /* ubah tinggi sesuai besar logo */
+            background: url('logo2.png'); /* ganti ke path logo kamu */
+            background-repeat: repeat-x;
+            background-size: auto 40px; /* logo akan diskalakan tinggi 40px */
+            opacity: 0.2;
+        }
+
+        .shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 4s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+
+        /* HOVER INSTRUCTION */
+        .flip-instruction {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            animation: fadeInOut 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .card-container {
+                width: 350px;
+                height: 220px;
+                max-width: 340px;    /* Batas maksimal lebar */
+            }
+            
+            .back-content {
+                padding: 25px;
+            }
+            
+            .company-name {
+                font-size: 20px;
+            }
+            
+            .main-logo {
+                font-size: 42px;
+            }
+            
+            .contact-item {
+                font-size: 10px;
+            }
+        }
+    
