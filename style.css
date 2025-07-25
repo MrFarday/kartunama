@@ -107,7 +107,7 @@
         .contact-section {
             display: flex;
             flex-direction: column;
-            gap: -px;
+            gap: 0px;
         }
 
         .contact-item {
@@ -119,7 +119,8 @@
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
-            margin-top: 8px;
+            margin-top: 4px;
+            margin-bottom: 1px;
         }
 
         .contact-item:hover {
@@ -151,7 +152,7 @@
         }
 
         .logo-image {
-            width: 60px;
+            width: 105px;
             height: auto;
             animation: logoGlow 2s ease-in-out infinite alternate;
             filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.4));
@@ -181,11 +182,11 @@
         }
 
         .logo-tagline {
-            font-size: 11px;
+            font-size: 16px;
             color: #e0e6ff;
             font-weight: 300;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .specialties {
@@ -197,11 +198,12 @@
         .specialty-item {
             display: inline-block;
             background: rgba(255,255,255,0.1);
-            padding: 5px 12px;
+            padding: 4px 12px;
             border-radius: 20px;
             margin: 3px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
+            margin-left: -1px;
         }
 
         /* ELEMEN DEKORATIF */
@@ -239,7 +241,7 @@
         }
 
         .circle3 {
-            width: 40px;
+            width: 40px;    
             height: 40px;
             top: 50%;
             right: 20px;
@@ -306,24 +308,25 @@
         /* RESPONSIVE */
         @media (max-width: 320px) {
             .card-container {
-             max-width: 300px;
+                width: 100px    ;
+                height: auto;
+                max-width: auto;    /* Batas maksimal lebar */
             }
             
             .back-content {
-                padding: 25px;
+                padding: 16px;
             }
             
             .company-name {
-                font-size: 14px;
+                font-size: 16px;
             }
             
             .main-logo {
-                font-size: 42px;
+                font-size: 36px;
             }
             
             .contact-item {
                 font-size: 10px;
-                gap: 4px;
+                line-height: 1.3;
             }
         }
-    
